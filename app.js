@@ -95,7 +95,7 @@ app.post("/addstudents", async(request, response) => {
     try {
         var studentdata = new studentModel(request.body);
         var result = await studentdata.save();
-        response.send(result);
+        response.json({"status":"success"});
     } catch (error) {
         console.log(error)
 

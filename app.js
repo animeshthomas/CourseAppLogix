@@ -56,7 +56,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //mongodb+srv://anishsnair:<password>@cluster0-rqfpy.mongodb.net/test?retryWrites=true&w=majority
 //mongoose.connect("mongodb://localhost:27017/testdb", { useNewUrlParser: true });
-mongoose.connect("mongodb+srv://anishsnair:hello12345@cluster0-rqfpy.mongodb.net/test?retryWrites=true&w=majority");
+// mongoose.connect("mongodb+srv://anishsnair:hello12345@cluster0-rqfpy.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://anishpdm:hello12345@cluster0.cp5gozh.mongodb.net/testdb?retryWrites=true&w=majority&appName=Cluster0");
 
 
 app.get("/getdata", async(request, response) => {

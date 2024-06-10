@@ -2,8 +2,10 @@ const express = require('express');
 var bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 var x = require('request');
+var cors = require('cors');
 
 var app = express();
+app.use(cors())
 let Schema = mongoose.Schema;
 // const studentModel = mongoose.model("students", {
 
@@ -56,7 +58,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //mongodb+srv://anishsnair:<password>@cluster0-rqfpy.mongodb.net/test?retryWrites=true&w=majority
 //mongoose.connect("mongodb://localhost:27017/testdb", { useNewUrlParser: true });
-// mongoose.connect("mongodb+srv://anishsnair:hello12345@cluster0-rqfpy.mongodb.net/test?retryWrites=true&w=majority");
 mongoose.connect("mongodb+srv://anishpdm:hello12345@cluster0.cp5gozh.mongodb.net/testdb?retryWrites=true&w=majority&appName=Cluster0");
 
 
@@ -96,6 +97,7 @@ app.post("/addstudents", async(request, response) => {
         var studentdata = new studentModel(request.body);
         var result = await studentdata.save();
         response.json({"status":"success"});
+        
     } catch (error) {
         console.log(error)
 

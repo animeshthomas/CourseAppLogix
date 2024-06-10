@@ -62,6 +62,7 @@ mongoose.connect("mongodb+srv://anishpdm:hello12345@cluster0.cp5gozh.mongodb.net
 
 
 app.get("/getdata", async(request, response) => {
+//hello
 
     try {
         var result = await studentModel.find().exec();
